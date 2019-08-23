@@ -1,0 +1,15 @@
+If your Raspberry Pi is headless (that is, not plugged into a monitor) or embedded in a robot, it’s unlikely to be running a graphical desktop.
+
+VNC Server can run in Virtual Mode to create a resource-efficient virtual desktop on demand, giving you graphical remote access even when there is no actual desktop to remote. This virtual desktop exists only in your Raspberry Pi’s memory:
+
+../_images/raspberry-pi-virtual.png
+To do this:
+
+On your Raspberry Pi, run the command vncserver. Make a note of the IP address/display number printed to the console, for example 192.167.5.149:1.
+On the device you will use to take control, enter this information in VNC Viewer.
+Stopping a virtual desktop
+A virtual desktop persists until you explicitly destroy it. Run the following command when you are sure it is no longer needed:
+
+vncserver -kill :<display-number>
+
+Note this command will terminate any current connections without warning to those users.
